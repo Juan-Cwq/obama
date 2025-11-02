@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Shifter - Image Glitch Effect</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎨 Obama Morpher</h1>
+            <p>Upload any image and watch it morph into Obama</p>
+            <p id="status" style="font-size: 0.9rem; margin-top: 5px; opacity: 0.8;">Loading target image...</p>
+        </header>
+
+        <div class="main-content">
+            <div class="upload-section">
+                <input type="file" id="imageUpload" accept="image/*" hidden>
+                <button id="uploadBtn" class="btn-primary">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="17 8 12 3 7 8"></polyline>
+                        <line x1="12" y1="3" x2="12" y2="15"></line>
+                    </svg>
+                    Upload Image
+                </button>
+            </div>
+
+            <div class="canvas-container">
+                <canvas id="canvas"></canvas>
+            </div>
+
+            <div class="controls-panel">
+                <div class="control-group">
+                    <label>Morph Progress: <span id="morphValue">0</span>%</label>
+                    <input type="range" id="morphProgress" min="0" max="100" value="0" class="slider">
+                </div>
+
+                <div class="control-group">
+                    <label>Animation Speed: <span id="speedValue">5</span>s</label>
+                    <input type="range" id="animSpeed" min="2" max="15" value="5" class="slider">
+                </div>
+
+                <div class="button-group">
+                    <button id="morphBtn" class="btn-primary">Start Morph</button>
+                    <button id="resetBtn" class="btn-secondary">Reset</button>
+                    <button id="downloadBtn" class="btn-secondary">Download</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
